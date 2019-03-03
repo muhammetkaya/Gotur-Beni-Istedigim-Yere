@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400&amp;subset=latin-ext);
+
+input, select, textarea, button {
+    font-family: Lato;
+    font-size: 16px;
+}
+
+#kayitMenu {
+    width: 100%;
+    max-width: 900px;
+    background: #FFF;
+    color: #333;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+.container-top {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+    .container-top > h3 {
+        font-weight: normal;
+        padding: 0;
+        margin: 0;
+    }
+
+.container .themes {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+    .container .themes > span {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        cursor: pointer;
+        border: solid 3px #FFF;
+    }
+
+        .container .themes > span.selectedx {
+            border-color: #333;
+        }
+
+    .container .themes > a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #f44a56;
+        display: inline-block;
+        padding: 5px 10px;
+        border: solid 1px #DDD;
+    }
+
+        .container .themes > a:hover {
+            border-color: #f44a56;
+        }
+
+        .container .themes > a.activex {
+            color: #FFF;
+            background: #f44a56;
+            border-color: #f44a56;
+        }

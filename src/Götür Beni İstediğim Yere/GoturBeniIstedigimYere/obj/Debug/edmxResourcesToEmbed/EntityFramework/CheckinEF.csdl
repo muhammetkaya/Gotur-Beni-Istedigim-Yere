@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckinDatasetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="CATEGORIEID" />
+    </Key>
+    <Property Name="CATEGORIEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PLURALNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SHORTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ICON" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PARENTCATEGORYID" Type="Int32" />
+    <Property Name="SWARMID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CategoryProfile">
+    <Key>
+      <PropertyRef Name="CATEGORYPROFILEID" />
+    </Key>
+    <Property Name="CATEGORYPROFILEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="FEATURES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Checkin">
+    <Key>
+      <PropertyRef Name="CHECKINID" />
+    </Key>
+    <Property Name="CHECKINID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLACEID" Type="Int32" />
+    <Property Name="POSTID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="0" />
+    <Property Name="LIKECOUNT" Type="Int32" />
+    <Property Name="WITHCOUT" Type="Int32" />
+    <Property Name="SCORE" Type="Int32" />
+    <Property Name="SHOUT" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LikeCategories">
+    <Key>
+      <PropertyRef Name="LIKECATEGORYID" />
+    </Key>
+    <Property Name="LIKECATEGORYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LIKEID" Type="Int32" />
+    <Property Name="CATEGORIEID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Likes">
+    <Key>
+      <PropertyRef Name="LIKEID" />
+    </Key>
+    <Property Name="LIKEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PARENTLIKEID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PLACEID" />
+    </Key>
+    <Property Name="PLACEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SWARMID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="0" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHECKINSCOUNT" Type="Int32" />
+    <Property Name="TIPCOUNT" Type="Int32" />
+    <Property Name="USERSCOUNT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PlaceCategories">
+    <Key>
+      <PropertyRef Name="PLACECATEGORIEID" />
+    </Key>
+    <Property Name="PLACECATEGORIEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLACEID" Type="Int32" />
+    <Property Name="CATEGORIEID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="POSTID" />
+    </Key>
+    <Property Name="POSTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="TWEETID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SHORTLINK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="SWARMCHECKINID" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TOKENID" />
+    </Key>
+    <Property Name="TOKENID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERLOGINID" Type="Int32" />
+    <Property Name="TOKENACID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRIPADVISORPLACES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLACENAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FAVORITESCOUNT" Type="Int32" />
+    <Property Name="FOLLOWERSCOUNT" Type="Int32" />
+    <Property Name="FRIENDSCOUNT" Type="Int32" />
+    <Property Name="LOCATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="0" />
+    <Property Name="SEX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TWID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SWID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserLikes">
+    <Key>
+      <PropertyRef Name="USERLIKEID" />
+    </Key>
+    <Property Name="USERLIKEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERLOGINID" Type="Int32" />
+    <Property Name="LIKEID" Type="Int32" />
+    <Property Name="VALUE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserLoginInfo">
+    <Key>
+      <PropertyRef Name="USERLOGINID" />
+    </Key>
+    <Property Name="USERLOGINID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+    <Property Name="ROLE" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CheckinDatasetEntities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" />
+    <EntitySet Name="CategoryProfile" EntityType="Self.CategoryProfile" />
+    <EntitySet Name="Checkin" EntityType="Self.Checkin" />
+    <EntitySet Name="LikeCategories" EntityType="Self.LikeCategories" />
+    <EntitySet Name="Likes" EntityType="Self.Likes" />
+    <EntitySet Name="Place" EntityType="Self.Place" />
+    <EntitySet Name="PlaceCategories" EntityType="Self.PlaceCategories" />
+    <EntitySet Name="Post" EntityType="Self.Post" />
+    <EntitySet Name="Token" EntityType="Self.Token" />
+    <EntitySet Name="TRIPADVISORPLACES" EntityType="Self.TRIPADVISORPLACES" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="UserLikes" EntityType="Self.UserLikes" />
+    <EntitySet Name="UserLoginInfo" EntityType="Self.UserLoginInfo" />
+  </EntityContainer>
+</Schema>

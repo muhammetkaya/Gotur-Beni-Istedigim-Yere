@@ -1,0 +1,263 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="~/Content/material-kit.css" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="~/Content/main.css" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/extras/animate.css" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/extras/owl.theme.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="~/Content/responsive.css" type="text/css">
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="~/Content/slicknav.css" type="text/css">
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" href="~/Content/bootstrap-select.min.css">
+    <title>AccountHome</title>
+</head>
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-default main-navigation" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle Navi</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="~/Home/Index">
+                        <img src="~/img/logo.png" alt="" style="width:250px;max-width:none;" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a>
+                                    <i class="">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Logout">
+                                    <i class="lnr lnr-user"></i>
+                                    Çıkış
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="~/Account/Login">
+                                    <i class="lnr lnr-enter">
+                                    </i>
+                                    Giriş
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Signup">
+                                    <i class="lnr lnr-user"></i>
+                                    Kayıt
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </nav>
+    </div> <!--Header Div End-->
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 page-sideabr">
+                    <div class="inner-box">
+                        <div class="widget-title">
+                            <h4>Reklam</h4>
+                        </div>
+                        <img src="#" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-9 page-content">
+                    <div class="inner-box">
+                        <div class="usearadmin">
+                            <h3><a href="#"><img class="userimg" src="~/img/avatar.jpg" alt=""> Merhaba, @User.Identity.Name</a></h3>
+                        </div>
+                    </div>
+                    <div class="inner-box">
+                        <div class="welcome-msg">
+                            <h3 class="page-sub-header2 clearfix no-padding">Merhaba,  </h3>
+                            <span class="page-sub-header-sub small">Foursquare hesabınızı aktif etmek, Hobilerinizi Eklemek,Şifrenizi Değiştirmek için aşağıdaki menüyü kullanabilirsiniz.</span>
+                        </div>
+                        <div id="accordion" class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse" aria-expanded="false" class="collapsed"> Hesap Detayları </a> </h4>
+                                </div>
+                                <div class="panel-collapse collapse" id="collapseB1" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <form role="form">
+                                            <div class="form-group is-empty">
+                                                <label class="control-label">Ad</label>
+                                                <input class="form-control" placeholder="Ad" type="text">
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <div class="form-group is-empty">
+                                                <label class="control-label">Soyad</label>
+                                                <input class="form-control" placeholder="Soyad" type="text">
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <div class="form-group is-empty">
+                                                <label class="control-label">Email</label>
+                                                <input class="form-control" placeholder="email@email.com" type="email">
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <div class="form-group is-empty">
+                                                <label class="control-label">Adres</label>
+                                                <input class="form-control" placeholder="Adres" type="text">
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <div class="form-group is-empty">
+                                                <label for="Phone" class="control-label">Telefon Numarası</label>
+                                                <input class="form-control" id="Phone" placeholder="Telefon Numarası" type="text">
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-common">Kaydet</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"> <a aria-expanded="false" class="collapsed" href="#collapseB2" data-toggle="collapse"> Foursquare Bağlantısı </a> </h4>
+                                </div>
+                                <div style="height: 0px;" aria-expanded="false" class="panel-collapse collapse" id="collapseB2">
+                                    <div class="panel-body">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <a class="btn btn-common btn-search btn-block" href="@Url.Action("UserClicksAuthenticate","Account")">Bağlan</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0" style="visibility: visible;-webkit-animation-delay: 0; -moz-animation-delay: 0; animation-delay: 0;">
+                        <div class="widget">
+                            <h3 class="block-title">Bizi Takip Edin</h3>
+                            <ul class="menu">
+                                <li>
+                                    <a title="fa fa-facebook" target="_blank" href="#"><i class="fa fa-facebook">&nbsp;Facebook</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-twitter" target="_blank" href="#"><i class="fa fa-twitter">&nbsp;Twitter</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-linkedin" target="_blank" href="#"><i class="fa fa-linkedin">&nbsp;Linkedin</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-google-plus" target="_blank" href="#"><i class="fa fa-google-plus">&nbsp;Google+</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-instagram" target="_blank" href="#"><i class="fa fa-instagram">&nbsp;Instagram</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-youtube" target="_blank" href="#"><i class="fa fa-youtube">&nbsp;Youtube</i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0.5" style="visibility: visible;-webkit-animation-delay:0.5; -moz-animation-delay: 0.5; animation-delay: 0.5;">
+                        <div class="widget">
+                            <h3 class="block-title">Faydalı Bağlantılar</h3>
+                            <ul class="menu">
+                                <li><a href="~/Home/Index">Anasayfa</a></li>
+                                <li><a href="~/Account/Login">Giriş</a></li>
+                                <li><a href="~/Home/SSS">SSS</a></li>
+                                <li><a href="~/Account/Signup">Kayıt Ol</a></li>
+                                <li><a href="~/Home/Iletisim">İletişim</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer area End -->
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info pull-left">
+                            <p>Aralık,2016</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+    </footer>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/material.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/material-kit.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/wow.js"></script>
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/form-validator.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/contact-form-script.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+
+</body>
+</html>

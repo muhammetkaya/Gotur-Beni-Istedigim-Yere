@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CheckinDatasetModelStoreContainer" CdmEntityContainer="CheckinDatasetEntities">
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="CATEGORIEID" ColumnName="CATEGORIEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PLURALNAME" ColumnName="PLURALNAME" />
+          <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+          <ScalarProperty Name="ICON" ColumnName="ICON" />
+          <ScalarProperty Name="PARENTCATEGORYID" ColumnName="PARENTCATEGORYID" />
+          <ScalarProperty Name="SWARMID" ColumnName="SWARMID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryProfile">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.CategoryProfile">
+        <MappingFragment StoreEntitySet="CategoryProfile">
+          <ScalarProperty Name="CATEGORYPROFILEID" ColumnName="CATEGORYPROFILEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FEATURES" ColumnName="FEATURES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Checkin">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Checkin">
+        <MappingFragment StoreEntitySet="Checkin">
+          <ScalarProperty Name="CHECKINID" ColumnName="CHECKINID" />
+          <ScalarProperty Name="PLACEID" ColumnName="PLACEID" />
+          <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="LIKECOUNT" ColumnName="LIKECOUNT" />
+          <ScalarProperty Name="WITHCOUT" ColumnName="WITHCOUT" />
+          <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+          <ScalarProperty Name="SHOUT" ColumnName="SHOUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LikeCategories">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.LikeCategories">
+        <MappingFragment StoreEntitySet="LikeCategories">
+          <ScalarProperty Name="LIKECATEGORYID" ColumnName="LIKECATEGORYID" />
+          <ScalarProperty Name="LIKEID" ColumnName="LIKEID" />
+          <ScalarProperty Name="CATEGORIEID" ColumnName="CATEGORIEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Likes">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Likes">
+        <MappingFragment StoreEntitySet="Likes">
+          <ScalarProperty Name="LIKEID" ColumnName="LIKEID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PARENTLIKEID" ColumnName="PARENTLIKEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="PLACEID" ColumnName="PLACEID" />
+          <ScalarProperty Name="SWARMID" ColumnName="SWARMID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="LNG" ColumnName="LNG" />
+          <ScalarProperty Name="CHECKINSCOUNT" ColumnName="CHECKINSCOUNT" />
+          <ScalarProperty Name="TIPCOUNT" ColumnName="TIPCOUNT" />
+          <ScalarProperty Name="USERSCOUNT" ColumnName="USERSCOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaceCategories">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.PlaceCategories">
+        <MappingFragment StoreEntitySet="PlaceCategories">
+          <ScalarProperty Name="PLACECATEGORIEID" ColumnName="PLACECATEGORIEID" />
+          <ScalarProperty Name="PLACEID" ColumnName="PLACEID" />
+          <ScalarProperty Name="CATEGORIEID" ColumnName="CATEGORIEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="TWEETID" ColumnName="TWEETID" />
+          <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="SHORTLINK" ColumnName="SHORTLINK" />
+          <ScalarProperty Name="SWARMCHECKINID" ColumnName="SWARMCHECKINID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Token">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.Token">
+        <MappingFragment StoreEntitySet="Token">
+          <ScalarProperty Name="TOKENID" ColumnName="TOKENID" />
+          <ScalarProperty Name="USERLOGINID" ColumnName="USERLOGINID" />
+          <ScalarProperty Name="TOKENACID" ColumnName="TOKENACID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRIPADVISORPLACES">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.TRIPADVISORPLACES">
+        <MappingFragment StoreEntitySet="TRIPADVISORPLACES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PLACENAME" ColumnName="PLACENAME" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FAVORITESCOUNT" ColumnName="FAVORITESCOUNT" />
+          <ScalarProperty Name="FOLLOWERSCOUNT" ColumnName="FOLLOWERSCOUNT" />
+          <ScalarProperty Name="FRIENDSCOUNT" ColumnName="FRIENDSCOUNT" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="TWID" ColumnName="TWID" />
+          <ScalarProperty Name="SWID" ColumnName="SWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLikes">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.UserLikes">
+        <MappingFragment StoreEntitySet="UserLikes">
+          <ScalarProperty Name="USERLIKEID" ColumnName="USERLIKEID" />
+          <ScalarProperty Name="USERLOGINID" ColumnName="USERLOGINID" />
+          <ScalarProperty Name="LIKEID" ColumnName="LIKEID" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLoginInfo">
+      <EntityTypeMapping TypeName="CheckinDatasetModel.UserLoginInfo">
+        <MappingFragment StoreEntitySet="UserLoginInfo">
+          <ScalarProperty Name="USERLOGINID" ColumnName="USERLOGINID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

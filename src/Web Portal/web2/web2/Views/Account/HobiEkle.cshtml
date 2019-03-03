@@ -1,0 +1,776 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SSS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="~/Content/material-kit.css" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="~/Content/main.css" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/extras/animate.css" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/extras/owl.theme.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="~/Content/responsive.css" type="text/css">
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="~/Content/slicknav.css" type="text/css">
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" href="~/Content/bootstrap-select.min.css">
+    <link rel="stylesheet" href="~/Content/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7 {
+            border: 1px solid #eee;
+            width: 142px;
+            min-height: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 5px 0 0 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+            #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li {
+                margin: 0 5px 5px 5px;
+                padding: 5px;
+                font-size: 1.2em;
+                width: 120px;
+            }
+
+        #mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9000;
+            background-color: #000;
+            display: none;
+        }
+
+        #boxes .window {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 440px;
+            height: 200px;
+            display: none;
+            z-index: 9999;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        #boxes #dialog {
+            width: 1000px;
+            height: auto;
+            padding: 10px;
+            background-color: #ffffff;
+            font-family: 'Segoe UI Light', sans-serif;
+            font-size: 15pt;
+        }
+
+        .maintext {
+            text-align: center;
+            font-family: "Segoe UI", sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background: url('bg.jpg');
+        }
+
+        #lorem {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 12pt;
+            text-align: left;
+        }
+
+        #popupfoot {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 16pt;
+            padding: 10px 20px;
+        }
+
+            #popupfoot a {
+                text-decoration: none;
+            }
+
+        .agree:hover {
+            background-color: #D1D1D1;
+        }
+
+        .popupoption:hover {
+            background-color: #D1D1D1;
+            color: green;
+        }
+
+        .popupoption2:hover {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7").sortable({
+                connectWith: ".connectedSortable"
+            }).disableSelection();
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default main-navigation" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle Navi</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="~/Home/Index">
+                        <img src="~/img/logo.png" alt="" style="width:250px;max-width:none;" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a>
+                                    <i class="">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Logout">
+                                    <i class="lnr lnr-user"></i>
+                                    Çıkış
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="~/Account/Login">
+                                    <i class="lnr lnr-enter">
+                                    </i>
+                                    Giriş
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Signup">
+                                    <i class="lnr lnr-user"></i>
+                                    Kayıt
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </nav>
+    </div> <!--Header Div End-->
+
+    <div class="page-header" style="background: url(../../img/banner1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="page-title">Hobi Ekleme</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <p>Hobi Havuzu!</p>
+                        <ul id="sortable1" class="connectedSortable">
+                            <li class="ui-state-checked">Masa Oyunu</li>
+                            <li class="ui-state-checked">Kart Oyunu</li>
+                            <li class="ui-state-checked">Bulmaca Çözmek</li>
+                            <li class="ui-state-checked">Karaoke</li>
+                            <li class="ui-state-checked">Bilgisayar Oyunu</li>
+                            <li class="ui-state-checked">Müzik Dinlemek</li>
+                            <li class="ui-state-checked">Kitap Okumak</li>
+                            <li class="ui-state-checked">Video Oyun</li>
+                            <li class="ui-state-checked">İnternette Surf</li>
+                            <li class="ui-state-checked">Televizyon Seyretmek</li>
+                            <li class="ui-state-checked">Çubukla Yeraltı Suyu Arama</li>
+                            <li class="ui-state-checked">İş Makinesi İzleme</li>
+                            <li class="ui-state-checked">Frisbe</li>
+                            <li class="ui-state-checked">Hulahop Çevirmek</li>
+                            <li class="ui-state-checked">Uçurtma Uçurmak</li>
+                            <li class="ui-state-checked">Alışveriş Yapmak</li>
+                            <li class="ui-state-checked">Su Üzerinde Taş Kaydırmak</li>
+                            <li class="ui-state-checked">Satranç</li>
+                            <li class="ui-state-checked">Dart</li>
+                            <li class="ui-state-checked">Araba Yarışı</li>
+                            <li class="ui-state-checked">Uzaktan Kumandalı Araba</li>
+                            <li class="ui-state-checked">Go Kart</li>
+                            <li class="ui-state-checked">Stand Up</li>
+                            <li class="ui-state-checked">Lunapark</li>
+                            <li class="ui-state-checked">Sirk</li>
+                            <li class="ui-state-checked">Konser</li>
+                            <li class="ui-state-checked">Aqua Park</li>
+                            <li class="ui-state-checked">Hayvanat Bahçesi</li>
+                            <li class="ui-state-checked">Müzik Festivali</li>
+                            <li class="ui-state-checked">Festival</li>
+                            <li class="ui-state-checked">Fuar</li>
+                            <li class="ui-state-checked">Güneşlenme</li>
+                            <li class="ui-state-checked">Sahilde Yürümek</li>
+                            <li class="ui-state-checked">Parka Gitmek</li>
+                            <li class="ui-state-checked">Masaja Gitmek</li>
+                            <li id="evcilHayvan" class="ui-state-default">Evcil Hayvan Beslemek</li>
+                            <li id="bahcecilik" class="ui-state-default">Bahçecilik</li>
+                            <li id="aticilik" class="ui-state-default">Atıcılık</li>
+                            <li id="iluzyon" class="ui-state-default">İlüzyon</li>
+                            <li id="muzikalEnstruman" class="ui-state-default">Müzikal Enstrüman Çalmak</li>
+                            <li id="sarkiSoylemek" class="ui-state-default">Şarkı Söylemek</li>
+                            <li id="astronomi" class="ui-state-default">Astronomi</li>
+                            <li id="breakdans" class="ui-state-default">Breakdans</li>
+                            <li id="balikTutma" class="ui-state-default">Balık Tutma</li>
+                            <li id="motorluTasitSurme" class="ui-state-default">Motorlu Taşıt Sürme</li>
+                            <li id="kampYapma" class="ui-state-default">Kamp Yapma</li>
+                            <li id="modayiTakipEtme" class="ui-state-default">Modayı Takip Etme</li>
+                            <li id="sahildeYurumek" class="ui-state-default">Sahilde Yürümek</li>
+                            <li id="parkaGitmek" class="ui-state-default">Parka Gitmek</li>
+                            <li id="masaj" class="ui-state-default">Masaja Gitmek</li>
+                            <li id="bar" class="ui-state-highlight">Bar</li>
+                            <li id="pub" class="ui-state-highlight">Pub</li>
+                            <li id="lounge" class="ui-state-highlight">Lounge</li>
+                            <li id="gecePazari" class="ui-state-highlight">Gece Pazarı</li>
+                            <li id="geceKlubu" class="ui-state-highlight">Gece Klübü</li>
+                            <li id="striptizKlubu" class="ui-state-highlight">Striptiz Klübü</li>
+                            <li id="dansKlubu" class="ui-state-highlight">Dans Klübü</li>
+                            <li id="meyhane" class="ui-state-highlight">Meyhane</li>
+                            <li id="fasil" class="ui-state-highlight">Fasıl</li>
+                            <li class="ui-state-error">Restorant</li>
+                            <li class="ui-state-error">Fransız Restorantı</li>
+                            <li class="ui-state-error">Mangal</li>
+                            <li class="ui-state-error">Fırın-Pastane</li>
+                            <li class="ui-state-error">Bistro</li>
+                            <li class="ui-state-error">Kahvaltı Yeri</li>
+                            <li class="ui-state-error">Çay Ocağı</li>
+                            <li class="ui-state-error">Büfe</li>
+                            <li class="ui-state-error">Hamburger DÜkkanı</li>
+                            <li class="ui-state-error">Kafeterya</li>
+                            <li class="ui-state-error">Cafe</li>
+                            <li class="ui-state-error">Kahve Dükkanı</li>
+                            <li class="ui-state-error">Krep Evi</li>
+                            <li class="ui-state-error">Tatlı Dükkanı</li>
+                            <li class="ui-state-error">Lokanta</li>
+                            <li class="ui-state-error">Donut Dükkanı</li>
+                            <li class="ui-state-error">Fast Food</li>
+                            <li class="ui-state-error">Pub</li>
+                            <li class="ui-state-error">Meyve Suyu</li>
+                            <li class="ui-state-error">Pizza Dükkanı</li>
+                            <li class="ui-state-active">Yazarlık</li>
+                            <li class="ui-state-active">Heykeltıraş</li>
+                            <li class="ui-state-active">Kum Sanatı</li>
+                            <li class="ui-state-active">Oyunculuk</li>
+                            <li class="ui-state-active">Tiyatro</li>
+                            <li class="ui-state-active">Akvaryuma Gitmek</li>
+                            <li class="ui-state-active">Sanat Galerisi</li>
+                            <li class="ui-state-active">Grafiti</li>
+                            <li class="ui-state-active">Çizim</li>
+                            <li class="ui-state-active">Fotoğrafçılık</li>
+                            <li class="ui-state-active">Sergiye Gitmek</li>
+                            <li class="ui-state-active">Tarihi Mekanlar</li>
+                            <li class="ui-state-exxtra">Buz Pateni</li>
+                            <li class="ui-state-exxtra">Okçuluk</li>
+                            <li class="ui-state-exxtra">Beyzbol</li>
+                            <li class="ui-state-exxtra">Basketbol</li>
+                            <li class="ui-state-exxtra">Vücut Geliştirme</li>
+                            <li class="ui-state-exxtra">Dövüş Sanatları</li>
+                            <li class="ui-state-exxtra">Sokak Futbolu</li>
+                            <li class="ui-state-exxtra">Paten</li>
+                            <li class="ui-state-exxtra">Koşu</li>
+                            <li class="ui-state-exxtra">Motor Sporları</li>
+                            <li class="ui-state-exxtra">Dağcılık</li>
+                            <li class="ui-state-exxtra">Bisiklet</li>
+                            <li class="ui-state-exxtra">Rafting</li>
+                            <li class="ui-state-exxtra">Dağdan İp İle İnmek</li>
+                            <li class="ui-state-exxtra">Kaya Tırmanışı</li>
+                            <li class="ui-state-exxtra">Ragby</li>
+                            <li class="ui-state-exxtra">Dalış Yapma</li>
+                            <li class="ui-state-exxtra">Atıcılık</li>
+                            <li class="ui-state-exxtra">Kayak</li>
+                            <li class="ui-state-exxtra">Snowboard</li>
+                            <li class="ui-state-exxtra">Futbol</li>
+                            <li class="ui-state-exxtra">Yüzme</li>
+                            <li class="ui-state-exxtra">Yürüyüş</li>
+                            <li class="ui-state-exxtra">Boks</li>
+                            <li class="ui-state-exxtra">Jimnastik</li>
+                            <li class="ui-state-exxtra">Voleybol</li>
+                            <li class="ui-state-exxtra">Halter</li>
+                            <li class="ui-state-exxtra">Hokey</li>
+                            <li class="ui-state-exxtra">Golf</li>
+                            <li class="ui-state-exxtra">Tenis</li>
+                            <li class="ui-state-exxtra">Surf</li>
+                            <li class="ui-state-exxtra">Avcılık</li>
+                            <li class="ui-state-exxtra">Bowling</li>
+                            <li class="ui-state-exxtra">Pilates</li>
+                            <li class="ui-state-exxtra">Yoga</li>
+                            <li class="ui-state-exxtra">Paintball</li>
+                            <li class="ui-state-exxtra">Bilardo</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>5 Puan</p>
+                        <ul id="sortable2" class="connectedSortable"></ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>4 Puan</p>
+                        <ul id="sortable3" class="connectedSortable"></ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>3 Puan</p>
+                        <ul id="sortable4" class="connectedSortable"></ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>2 Puan</p>
+                        <ul id="sortable5" class="connectedSortable"></ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>1 Puan</p>
+                        <ul id="sortable6" class="connectedSortable"></ul>
+                    </div>
+                    <div class="col-md-2">
+                        <p>1 Puan</p>
+                        <ul id="sortable6" class="connectedSortable"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+        <section>
+            <div class="container">
+                <div id="ballot" class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Hobi Havuzu!</p>
+                                <ul id="sortable1" class="connectedSortable">
+                                    <li id="49" class="ui-state-checked">Masa Oyunu<input type="hidden" name="eglence[]" value="Masa Oyunu" /></li>
+                                    <li id="50" class="ui-state-checked">Kart Oyunu</li>
+                                    <li id="51" class="ui-state-checked">Bulmaca Çözmek</li>
+                                    <li id="52" class="ui-state-checked">Karaoke</li>
+                                    <li id="53" class="ui-state-checked">Bilgisayar Oyunu</li>
+                                    <li id="54" class="ui-state-checked">Müzik Dinlemek</li>
+                                    <li id="55" class="ui-state-checked">Kitap Okumak</li>
+                                    <li id="56" class="ui-state-checked">Video Oyun</li>
+                                    <li id="57" class="ui-state-checked">İnternette Surf</li>
+                                    <li id="58" class="ui-state-checked">Televizyon Seyretmek</li>
+                                    <li id="59" class="ui-state-checked">Çubukla Yeraltı Suyu Arama</li>
+                                    <li id="60" class="ui-state-checked">İş Makinesi İzleme</li>
+                                    <li id="61" class="ui-state-checked">Frisbe</li>
+                                    <li id="62" class="ui-state-checked">Hulahop Çevirmek</li>
+                                    <li id="63" class="ui-state-checked">Uçurtma Uçurmak</li>
+                                    <li id="64" class="ui-state-checked">Alışveriş Yapmak</li>
+                                    <li id="65" class="ui-state-checked">Su Üzerinde Taş Kaydırmak</li>
+                                    <li id="66" class="ui-state-checked">Satranç</li>
+                                    <li id="67" class="ui-state-checked">Dart</li>
+                                    <li id="68" class="ui-state-checked">Araba Yarışı</li>
+                                    <li id="69" class="ui-state-checked">Uzaktan Kumandalı Araba</li>
+                                    <li id="70" class="ui-state-checked">Go Kart</li>
+                                    <li id="71" class="ui-state-checked">Stand Up</li>
+                                    <li id="72" class="ui-state-checked">Lunapark</li>
+                                    <li id="73" class="ui-state-checked">Sirk</li>
+                                    <li id="74" class="ui-state-checked">Konser</li>
+                                    <li id="75" class="ui-state-checked">Aqua Park</li>
+                                    <li id="76" class="ui-state-checked">Hayvanat Bahçesi</li>
+                                    <li id="77" class="ui-state-checked">Müzik Festivali</li>
+                                    <li id="78" class="ui-state-checked">Festival</li>
+                                    <li id="79" class="ui-state-checked">Fuar</li>
+                                    <li id="80" class="ui-state-checked">Güneşlenme</li>
+                                    <li id="81" class="ui-state-checked">Sahilde Yürümek</li>
+                                    <li id="82" class="ui-state-checked">Parka Gitmek</li>
+                                    <li id="83" class="ui-state-checked">Masaja Gitmek</li>
+                                    <li id="2" class="ui-state-default">Evcil Hayvan Beslemek</li>
+                                    <li id="8" class="ui-state-default">Bahçecilik</li>
+                                    <li id="9" class="ui-state-default">Atıcılık</li>
+                                    <li id="10" class="ui-state-default">İlüzyon</li>
+                                    <li id="11" class="ui-state-default">Müzikal Enstrüman Çalmak</li>
+                                    <li id="12" class="ui-state-default">Şarkı Söylemek</li>
+                                    <li id="13" class="ui-state-default">Astronomi</li>
+                                    <li id="15" class="ui-state-default">Breakdans</li>
+                                    <li id="16" class="ui-state-default">Balık Tutma</li>
+                                    <li id="17" class="ui-state-default">Motorlu Taşıt Sürme</li>
+                                    <li id="18" class="ui-state-default">Kamp Yapma</li>
+                                    <li id="19" class="ui-state-default">Modayı Takip Etme</li>
+                                    <li id="20" class="ui-state-highlight">Bar</li>
+                                    <li id="21" class="ui-state-highlight">Pub</li>
+                                    <li id="22" class="ui-state-highlight">Lounge</li>
+                                    <li id="23" class="ui-state-highlight">Gece Pazarı</li>
+                                    <li id="24" class="ui-state-highlight">Gece Klübü</li>
+                                    <li id="25" class="ui-state-highlight">Striptiz Klübü</li>
+                                    <li id="28" class="ui-state-highlight">Dans Klübü</li>
+                                    <li id="131" class="ui-state-highlight">Meyhane</li>
+                                    <li id="132" class="ui-state-highlight">Fasıl</li>
+                                    <li id="29" class="ui-state-error">Restorant</li>
+                                    <li id="30" class="ui-state-error">Fransız Restorantı</li>
+                                    <li id="31" class="ui-state-error">Mangal</li>
+                                    <li id="32" class="ui-state-error">Fırın-Pastane</li>
+                                    <li id="33" class="ui-state-error">Bistro</li>
+                                    <li id="34" class="ui-state-error">Kahvaltı Yeri</li>
+                                    <li id="35" class="ui-state-error">Çay Ocağı</li>
+                                    <li id="36" class="ui-state-error">Büfe</li>
+                                    <li id="37" class="ui-state-error">Hamburger DÜkkanı</li>
+                                    <li id="38" class="ui-state-error">Kafeterya</li>
+                                    <li id="39" class="ui-state-error">Cafe</li>
+                                    <li id="40" class="ui-state-error">Kahve Dükkanı</li>
+                                    <li id="41" class="ui-state-error">Krep Evi</li>
+                                    <li id="42" class="ui-state-error">Tatlı Dükkanı</li>
+                                    <li id="43" class="ui-state-error">Lokanta</li>
+                                    <li id="44" class="ui-state-error">Donut Dükkanı</li>
+                                    <li id="45" class="ui-state-error">Fast Food</li>
+                                    <li id="46" class="ui-state-error">Pub</li>
+                                    <li id="47" class="ui-state-error">Meyve Suyu</li>
+                                    <li id="48" class="ui-state-error">Pizza Dükkanı</li>
+                                    <li id="84" class="ui-state-active">Yazarlık</li>
+                                    <li id="85" class="ui-state-active">Heykeltıraş</li>
+                                    <li id="86" class="ui-state-active">Kum Sanatı</li>
+                                    <li id="87" class="ui-state-active">Oyunculuk</li>
+                                    <li id="88" class="ui-state-active">Tiyatro</li>
+                                    <li id="89" class="ui-state-active">Akvaryuma Gitmek</li>
+                                    <li id="90" class="ui-state-active">Sanat Galerisi</li>
+                                    <li id="92" class="ui-state-active">Grafiti</li>
+                                    <li id="93" class="ui-state-active">Çizim</li>
+                                    <li id="94" class="ui-state-active">Fotoğrafçılık</li>
+                                    <li id="95" class="ui-state-active">Sergiye Gitmek</li>
+                                    <li id="96" class="ui-state-active">Tarihi Mekanlar</li>
+                                    <li id="97" class="ui-state-exxtra">Buz Pateni</li>
+                                    <li id="98" class="ui-state-exxtra">Okçuluk</li>
+                                    <li id="99" class="ui-state-exxtra">Beyzbol</li>
+                                    <li id="100" class="ui-state-exxtra">Basketbol</li>
+                                    <li id="101" class="ui-state-exxtra">Vücut Geliştirme</li>
+                                    <li id="102" class="ui-state-exxtra">Dövüş Sanatları</li>
+                                    <li id="103" class="ui-state-exxtra">Sokak Futbolu</li>
+                                    <li id="104" class="ui-state-exxtra">Paten</li>
+                                    <li id="105" class="ui-state-exxtra">Koşu</li>
+                                    <li id="106" class="ui-state-exxtra">Motor Sporları</li>
+                                    <li id="107" class="ui-state-exxtra">Dağcılık</li>
+                                    <li id="108" class="ui-state-exxtra">Bisiklet</li>
+                                    <li id="109" class="ui-state-exxtra">Rafting</li>
+                                    <li id="110" class="ui-state-exxtra">Dağdan İp İle İnmek</li>
+                                    <li id="111" class="ui-state-exxtra">Kaya Tırmanışı</li>
+                                    <li id="112" class="ui-state-exxtra">Ragby</li>
+                                    <li id="113" class="ui-state-exxtra">Dalış Yapma</li>
+                                    <li id="114" class="ui-state-exxtra">Atıcılık</li>
+                                    <li id="115" class="ui-state-exxtra">Kayak</li>
+                                    <li id="116" class="ui-state-exxtra">Snowboard</li>
+                                    <li id="117" class="ui-state-exxtra">Futbol</li>
+                                    <li id="118" class="ui-state-exxtra">Yüzme</li>
+                                    <li id="119" class="ui-state-exxtra">Yürüyüş</li>
+                                    <li id="120" class="ui-state-exxtra">Boks</li>
+                                    <li id="121" class="ui-state-exxtra">Jimnastik</li>
+                                    <li id="122" class="ui-state-exxtra">Voleybol</li>
+                                    <li id="123" class="ui-state-exxtra">Halter</li>
+                                    <li id="124" class="ui-state-exxtra">Hokey</li>
+                                    <li id="125" class="ui-state-exxtra">Golf</li>
+                                    <li id="126" class="ui-state-exxtra">Tenis</li>
+                                    <li id="127" class="ui-state-exxtra">Surf</li>
+                                    <li id="128" class="ui-state-exxtra">Avcılık</li>
+                                    <li id="129" class="ui-state-exxtra">Bowling</li>
+                                    <li id="130" class="ui-state-exxtra">Pilates</li>
+                                    <li id="133" class="ui-state-exxtra">Yoga</li>
+                                    <li id="134" class="ui-state-exxtra">Paintball</li>
+                                    <li id="135" class="ui-state-exxtra">Bilardo</li>
+                                </ul>
+                            </div>
+                            <div id="point5" class="col-md-3">
+                                <p>5 Puan</p>
+                                <ul id="sortable2" class="connectedSortable"></ul>
+                            </div>
+                            <div id="point4" class="col-md-3">
+                                <p>4 Puan</p>
+                                <ul id="sortable3" class="connectedSortable"></ul>
+                            </div>
+                            <div id="point3" class="col-md-3">
+                                <p>3 Puan</p>
+                                <ul id="sortable4" class="connectedSortable"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div id="point2" class="col-md-3">
+                                <p>2 Puan</p>
+                                <ul id="sortable5" class="connectedSortable"></ul>
+                            </div>
+                            <div id="point1" class="col-md-3">
+                                <p>1 Puan</p>
+                                <ul id="sortable6" class="connectedSortable"></ul>
+                            </div>
+                            <div id="point0" class="col-md-3">
+                                <p>Çöp!</p>
+                                <ul id="sortable7" class="connectedSortable"></ul>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="btnEkle" type="submit" class="btn btn-common log-btn">Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div id="result"></div>
+
+        <div id="boxes">
+            <div id="dialog" class="window">
+                1) Ekranın Solunda Bulunan Hobi Havuzuna Göz Atın. <br />2) Havuzda Bulunan Hobileri İlgi Derecenize Göre Havuzlara Sürükleyin ve Bırakın. <br /> 3)En Yüksek İlgi Derecesi için 5 Puan Havuzunu Kullanın. <br /> 4)En Düşük İlgi Derecesi İçin 1 Puan Havuzunu Kullanın. <br /> 5) Hiç ilgi duymadıklarınızı Çöp Havuzuna Bırakın. <br /> Mor renk Eğlence kategorisini <br /> Gri renk Genel Hobileri <br /> Sarı renk Gece Hayatını <br /> Mavi renk Sanatı <br /> Yeşil Renk Sporu <br /> Pembe renk ise Yemek kategorisini temsil eder.
+                <div id="popupfoot">
+                    <a href="#" class="close agree" style="color:red;">Anladım!</a>
+                </div>
+            </div>
+            <div id="mask"></div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+
+                var id = '#dialog';
+
+                //Get the screen height and width
+                var maskHeight = $(document).height();
+                var maskWidth = $(window).width();
+
+                //Set heigth and width to mask to fill up the whole screen
+                $('#mask').css({ 'width': maskWidth, 'height': maskHeight });
+
+                //transition effect
+                $('#mask').fadeIn(500);
+                $('#mask').fadeTo("slow", 0.9);
+
+                //Get the window height and width
+                var winH = $(window).height();
+                var winW = $(window).width();
+
+                //Set the popup window to center
+                $(id).css('top', winH / 2 - $(id).height() / 2);
+                $(id).css('left', winW / 2 - $(id).width() / 2);
+
+                //transition effect
+                $(id).fadeIn(2000);
+
+                //if close button is clicked
+                $('.window .close').click(function (e) {
+                    //Cancel the link behavior
+                    e.preventDefault();
+
+                    $('#mask').hide();
+                    $('.window').hide();
+                });
+
+                //if mask is clicked
+                $('#mask').click(function () {
+                    $(this).hide();
+                    $('.window').hide();
+                });
+
+            });
+        </script>
+
+        @*<script>
+                $(function () {
+                    $("#sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7").sortable({
+                        connectWith: ".connectedSortable",
+                        update: function () {
+                            var puan5 = $('#sortable2').sortable('toArray').toString();
+                            var puan4 = $('#sortable3').sortable('toArray').toString();
+                            var puan3 = $('#sortable4').sortable('toArray').toString();
+                            var puan2 = $('#sortable5').sortable('toArray').toString();
+                            var puan1 = $('#sortable6').sortable('toArray').toString();
+                            var puan0 = $('#sortable7').sortable('toArray').toString();
+
+                            var a = {
+                                puan5,
+                                puan4,
+                                puan3,
+                                puan2,
+                                puan1,
+                                puan0
+                            };
+
+                            alert("devammm"); //Just showing update
+                            $.post('../Account/HobiEkle', { a: a }, function (data) { });
+
+                        }
+                    }).disableSelection();
+                });
+            </script>*@
+        @*<script>
+                $("#btnEkle").click(function () {
+                    $("#sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7").sortable({
+                        connectWith: ".connectedSortable"
+                    });
+                    //var sortedIDs = $(".sortable2").sortable("toArray");
+                    var data = $(".sortable2").sortable('toArray', { attribute: 'id' });
+
+                    $.post('../Account/HobiEkle',{a:data},function(data){});
+                });
+            </script>*@
+
+    <script>
+        $("#btnEkle").click(function () {
+
+            var tmpBes = [];
+
+            $('#point5 li').each(function () {
+                var id = $(this).attr('id');
+                tmpBes.push(id);
+            });
+
+
+            var tmpDort = [];
+
+            $('#point4 li').each(function () {
+                var id = $(this).attr('id');
+                tmpDort.push(id);
+            });
+
+
+            var tmpUc = [];
+
+            $('#point3 li').each(function () {
+                var id = $(this).attr('id');
+                tmpUc.push(id);
+            });
+
+
+            var tmpIki = [];
+
+            $('#point2 li').each(function () {
+                var id = $(this).attr('id');
+                tmpIki.push(id);
+            });
+
+
+            var tmpBir = [];
+
+            $('#point1 li').each(function () {
+                var id = $(this).attr('id');
+                tmpBir.push(id);
+            });
+
+
+            var tmpSifir = [];
+
+            $('#point0 li').each(function () {
+                var id = $(this).attr('id');
+                tmpSifir.push(id);
+            });
+
+            var data = {
+                besPuan: [],
+                dortPuan: [],
+                ucPuan: [],
+                ikiPuan: [],
+                birPuan: [],
+                sifirPuan: []
+            };
+
+            data.besPuan = tmpBes;
+            data.dortPuan = tmpDort;
+            data.ucPuan = tmpUc;
+            data.ikiPuan = tmpIki;
+            data.birPuan = tmpBir;
+            data.sifirPuan = tmpSifir;
+
+            $.post('../Account/HobiEkle', { h: data }, function (data)
+            {
+                if (data == true)
+                    location.href = "/Home/Index";
+            });
+
+        });
+    </script>
+
+        <footer>
+            <!-- Footer Area Start -->
+            <section class="footer-Content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0" style="visibility: visible;-webkit-animation-delay: 0; -moz-animation-delay: 0; animation-delay: 0;">
+                            <div class="widget">
+                                <h3 class="block-title">Bizi Takip Edin</h3>
+                                <ul class="menu">
+                                    <li>
+                                        <a title="fa fa-facebook" target="_blank" href="#"><i class="fa fa-facebook">&nbsp;Facebook</i></a>
+                                    </li>
+                                    <li>
+                                        <a title="fa fa-twitter" target="_blank" href="#"><i class="fa fa-twitter">&nbsp;Twitter</i></a>
+                                    </li>
+                                    <li>
+                                        <a title="fa fa-linkedin" target="_blank" href="#"><i class="fa fa-linkedin">&nbsp;Linkedin</i></a>
+                                    </li>
+                                    <li>
+                                        <a title="fa fa-google-plus" target="_blank" href="#"><i class="fa fa-google-plus">&nbsp;Google+</i></a>
+                                    </li>
+                                    <li>
+                                        <a title="fa fa-instagram" target="_blank" href="#"><i class="fa fa-instagram">&nbsp;Instagram</i></a>
+                                    </li>
+                                    <li>
+                                        <a title="fa fa-youtube" target="_blank" href="#"><i class="fa fa-youtube">&nbsp;Youtube</i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0.5" style="visibility: visible;-webkit-animation-delay:0.5; -moz-animation-delay: 0.5; animation-delay: 0.5;">
+                            <div class="widget">
+                                <h3 class="block-title">Faydalı Bağlantılar</h3>
+                                <ul class="menu">
+                                    <li><a href="~/Home/Index">Anasayfa</a></li>
+                                    <li><a href="~/Account/Login">Giriş</a></li>
+                                    <li><a href="~/Home/SSS">SSS</a></li>
+                                    <li><a href="~/Account/Signup">Kayıt Ol</a></li>
+                                    <li><a href="~/Home/Iletisim">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer area End -->
+            <!-- Copyright Start  -->
+            <div id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="site-info pull-left">
+                                <p>Aralık,2016</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright End -->
+
+        </footer>
+
+</body>
+</html>

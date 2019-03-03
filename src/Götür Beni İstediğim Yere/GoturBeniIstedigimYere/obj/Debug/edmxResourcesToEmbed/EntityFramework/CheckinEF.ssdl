@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckinDatasetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="CATEGORIEID" />
+    </Key>
+    <Property Name="CATEGORIEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="PLURALNAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="SHORTNAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="ICON" Type="nvarchar" MaxLength="500" />
+    <Property Name="PARENTCATEGORYID" Type="int" />
+    <Property Name="SWARMID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CategoryProfile">
+    <Key>
+      <PropertyRef Name="CATEGORYPROFILEID" />
+    </Key>
+    <Property Name="CATEGORYPROFILEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="int" />
+    <Property Name="FEATURES" Type="text" />
+  </EntityType>
+  <EntityType Name="Checkin">
+    <Key>
+      <PropertyRef Name="CHECKINID" />
+    </Key>
+    <Property Name="CHECKINID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PLACEID" Type="int" />
+    <Property Name="POSTID" Type="int" />
+    <Property Name="CREATEDDATE" Type="date" />
+    <Property Name="LIKECOUNT" Type="int" />
+    <Property Name="WITHCOUT" Type="int" />
+    <Property Name="SCORE" Type="int" />
+    <Property Name="SHOUT" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="LikeCategories">
+    <Key>
+      <PropertyRef Name="LIKECATEGORYID" />
+    </Key>
+    <Property Name="LIKECATEGORYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LIKEID" Type="int" />
+    <Property Name="CATEGORIEID" Type="int" />
+  </EntityType>
+  <EntityType Name="Likes">
+    <Key>
+      <PropertyRef Name="LIKEID" />
+    </Key>
+    <Property Name="LIKEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="300" />
+    <Property Name="PARENTLIKEID" Type="int" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PLACEID" />
+    </Key>
+    <Property Name="PLACEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SWARMID" Type="nvarchar" MaxLength="100" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="200" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="200" />
+    <Property Name="CREATEDDATE" Type="date" />
+    <Property Name="ADDRESS" Type="text" />
+    <Property Name="LAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="LNG" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHECKINSCOUNT" Type="int" />
+    <Property Name="TIPCOUNT" Type="int" />
+    <Property Name="USERSCOUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="PlaceCategories">
+    <Key>
+      <PropertyRef Name="PLACECATEGORIEID" />
+    </Key>
+    <Property Name="PLACECATEGORIEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PLACEID" Type="int" />
+    <Property Name="CATEGORIEID" Type="int" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="POSTID" />
+    </Key>
+    <Property Name="POSTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="int" />
+    <Property Name="TWEETID" Type="nvarchar" MaxLength="200" />
+    <Property Name="TEXT" Type="text" />
+    <Property Name="SOURCE" Type="text" />
+    <Property Name="SHORTLINK" Type="nvarchar" MaxLength="300" />
+    <Property Name="SWARMCHECKINID" Type="nvarchar" MaxLength="300" />
+    <Property Name="CREATEDDATE" Type="date" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TOKENID" />
+    </Key>
+    <Property Name="TOKENID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERLOGINID" Type="int" />
+    <Property Name="TOKENACID" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRIPADVISORPLACES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PLACENAME" Type="nvarchar" MaxLength="300" />
+    <Property Name="LOCATION" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="300" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="FAVORITESCOUNT" Type="int" />
+    <Property Name="FOLLOWERSCOUNT" Type="int" />
+    <Property Name="FRIENDSCOUNT" Type="int" />
+    <Property Name="LOCATION" Type="nvarchar" MaxLength="100" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATEDDATE" Type="date" />
+    <Property Name="SEX" Type="nvarchar" MaxLength="100" />
+    <Property Name="URL" Type="nvarchar" MaxLength="200" />
+    <Property Name="TWID" Type="nvarchar" MaxLength="100" />
+    <Property Name="SWID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="UserLikes">
+    <Key>
+      <PropertyRef Name="USERLIKEID" />
+    </Key>
+    <Property Name="USERLIKEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERLOGINID" Type="int" />
+    <Property Name="LIKEID" Type="int" />
+    <Property Name="VALUE" Type="int" />
+  </EntityType>
+  <EntityType Name="UserLoginInfo">
+    <Key>
+      <PropertyRef Name="USERLOGINID" />
+    </Key>
+    <Property Name="USERLOGINID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SURNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERID" Type="int" />
+    <Property Name="ISACTIVE" Type="bit" />
+    <Property Name="ROLE" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CheckinDatasetModelStoreContainer">
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryProfile" EntityType="Self.CategoryProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Checkin" EntityType="Self.Checkin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LikeCategories" EntityType="Self.LikeCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Likes" EntityType="Self.Likes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceCategories" EntityType="Self.PlaceCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRIPADVISORPLACES" EntityType="Self.TRIPADVISORPLACES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLikes" EntityType="Self.UserLikes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLoginInfo" EntityType="Self.UserLoginInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

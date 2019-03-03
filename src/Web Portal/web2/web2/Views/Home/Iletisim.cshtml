@@ -1,0 +1,350 @@
+﻿@model web2.Models.DataViewModel.SIGNUPVIEWMODEL
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Iletisim</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="~/Content/material-kit.css" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="~/Content/main.css" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/extras/animate.css" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/extras/owl.theme.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="~/Content/responsive.css" type="text/css">
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="~/Content/slicknav.css" type="text/css">
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" href="~/Content/bootstrap-select.min.css">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default main-navigation" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle Navi</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="~/Home/Index">
+                        <img src="~/img/logo.png" alt="" style="width:250px;max-width:none;" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a>
+                                    <i class="">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Logout">
+                                    <i class="lnr lnr-user"></i>
+                                    Çıkış
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="~/Account/Login">
+                                    <i class="lnr lnr-enter">
+                                    </i>
+                                    Giriş
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Account/Signup">
+                                    <i class="lnr lnr-user"></i>
+                                    Kayıt
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </nav>
+    </div> <!--Header Div End-->
+
+    <div class="page-header" style="background: url(../../img/banner1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="page-title">Bizimle İletişime Geçin</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY04YUOytfoNsdAWu8jAiTyvcJwE586Wo"></script>
+    <script>
+        // In this example, we center the map, and add a marker, using a LatLng object
+        // literal instead of a google.maps.LatLng object. LatLng object literals are
+        // a convenient way to add a LatLng coordinate and, in most cases, can be used
+        // in place of a google.maps.LatLng object.
+
+        var map;
+        function initialize() {
+            var mapOptions = {
+                zoom: 20,
+                center: { lat: 38.429668, lng: 27.134369 }
+            };
+            map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+
+            var marker = new google.maps.Marker({
+                // The below line is equivalent to writing:
+                // position: new google.maps.LatLng(-34.397, 150.644)
+                position: { lat: 38.429668, lng: 27.134369 },
+                map: map
+            });
+
+            // You can use a LatLng literal in place of a google.maps.LatLng object when
+            // creating the Marker object. Once the Marker object is instantiated, its
+            // position will be available as a google.maps.LatLng object. In this case,
+            // we retrieve the marker's position using the
+            // google.maps.LatLng.getPosition() method.
+            var infowindow = new google.maps.InfoWindow({
+                content: '<p>Marker Location:' + marker.getPosition() + '</p>'
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    
+
+
+    <div id="map" style="width:500px" ></div>*@
+
+
+
+
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2 class="title-2">
+                        Mesaj Bırakın!
+                    </h2>
+                    <!-- Form -->
+                    <form id="contactForm" class="contact-form" data-toggle="validator" novalidate="true">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group is-empty">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Ad Soyad" required="" data-error="Lütfen Adınızı Boş Bırakmayın">
+                                            <div class="help-block with-errors"></div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group is-empty">
+                                            <input type="email" class="form-control" id="email" placeholder="email@email.com" required="" data-error="Lütfen Email Boş Bırakmayın">
+                                            <div class="help-block with-errors"></div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group is-empty">
+                                            <input type="text" class="form-control" id="msg_phone" name="phone" placeholder="Telefon" required="" data-error="Lütfen Telefon Numaranızı Boş Bırakmayın">
+                                            <div class="help-block with-errors"></div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group is-empty">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu" required="" data-error="Lütfen Mesaj Konusunu Boş Bırakmayın">
+                                            <div class="help-block with-errors"></div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" id="submitM" class="btn btn-common disabled" style="pointer-events: all; cursor: pointer;">Mesajı Yolla</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group is-empty">
+                                            <textarea class="form-control" placeholder="Mesaj" rows="10" data-error="Mesajınızı Yazın" required=""></textarea>
+                                            <div class="help-block with-errors"></div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-3">
+                    <h2 class="title-2">
+                        İletişim Bilgileri
+                    </h2>
+                    <div class="information">
+                        <div class="contact-datails">
+                            <div class="icon">
+                                <i class="fa fa-map-marker icon-radius"></i>
+                            </div>
+                            <div class="info">
+                                <h3>Adres</h3>
+                                <span class="detail">Ana Ofis: İzmir</span>
+                            </div>
+                        </div>
+                        <div class="contact-datails">
+                            <div class="icon">
+                                <i class="fa fa-phone icon-radius"></i>
+                            </div>
+                            <div class="info">
+                                <h3>Telefon Numaraları</h3>
+                                <span class="detail">Ana Ofis: 0 335 </span>
+                            </div>
+                        </div>
+                        <div class="contact-datails">
+                            <div class="icon">
+                                <i class="fa fa-location-arrow icon-radius"></i>
+                            </div>
+                            <div class="info">
+                                <h3>Email Adres</h3>
+                                <span class="detail">Teknik Yardım: destek@mail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0" style="visibility: visible;-webkit-animation-delay: 0; -moz-animation-delay: 0; animation-delay: 0;">
+                        <div class="widget">
+                            <h3 class="block-title">Bizi Takip Edin</h3>
+                            <ul class="menu">
+                                <li>
+                                    <a title="fa fa-facebook" target="_blank" href="#"><i class="fa fa-facebook">&nbsp;Facebook</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-twitter" target="_blank" href="#"><i class="fa fa-twitter">&nbsp;Twitter</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-linkedin" target="_blank" href="#"><i class="fa fa-linkedin">&nbsp;Linkedin</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-google-plus" target="_blank" href="#"><i class="fa fa-google-plus">&nbsp;Google+</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-instagram" target="_blank" href="#"><i class="fa fa-instagram">&nbsp;Instagram</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-youtube" target="_blank" href="#"><i class="fa fa-youtube">&nbsp;Youtube</i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0.5" style="visibility: visible;-webkit-animation-delay:0.5; -moz-animation-delay: 0.5; animation-delay: 0.5;">
+                        <div class="widget">
+                            <h3 class="block-title">Faydalı Bağlantılar</h3>
+                            <ul class="menu">
+                                <li><a href="~/Home/Index">Anasayfa</a></li>
+                                <li><a href="~/Account/Login">Giriş</a></li>
+                                <li><a href="~/Home/SSS">SSS</a></li>
+                                <li><a href="~/Account/Signup">Kayıt Ol</a></li>
+                                <li><a href="~/Home/Iletisim">İletişim</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer area End -->
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info pull-left">
+                            <p>Aralık,2016</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+    </footer>
+
+    <script type="text/javascript" src="~/Scripts/jquery-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/material.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/material-kit.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/wow.js"></script>
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/form-validator.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/contact-form-script.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+
+
+
+</body>
+</html>

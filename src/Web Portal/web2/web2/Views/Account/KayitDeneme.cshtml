@@ -1,0 +1,279 @@
+﻿@model web2.Models.DataViewModel.SIGNUPVIEWMODEL
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/jasny-bootstrap.min.css" type="text/css">
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="~/Content/material-kit.css" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="~/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="~/Content/main.css" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/extras/animate.css" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/extras/owl.theme.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="~/Content/responsive.css" type="text/css">
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="~/Content/slicknav.css" type="text/css">
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" href="~/Content/bootstrap-select.min.css">
+    <title>Signup</title>
+
+    <link rel="stylesheet" href="~/Content/KayitD/demo.css" />
+    <link rel="stylesheet" href="~/Content/KayitD/stepsForm.css" />
+
+    <link rel="stylesheet" href="~/Content/rateit.css" />
+
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    @*<link rel="stylesheet" href="~/Content/KayitD/star-rating.css" />
+
+        <script src="~/Scripts/star-rating.js"></script>*@
+
+
+</head>
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-default main-navigation" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle Navi</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="~/Home/Index">
+                        <img src="~/img/logo.png" alt="" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="~/Account/Login">
+                                <i class="lnr lnr-enter">
+                                </i>
+                                Giriş
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Account/Signup">
+                                <i class="lnr lnr-user"></i>
+                                Kayıt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> <!--Header Div End-->
+
+
+    <div class="page-header" style="background:  url(../../img/banner1.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="page-title">Bize Katılın!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="kayitMenu">
+        <div class="container-top" id="kayitMenuTop">
+            <h3>*Renk Değiştirebilirsiniz </h3>
+            <div class="themes">
+                <span data-value="default" class="selectedx" style="background:#2096cd;"></span>
+                <span data-value="purple" style="background:#795aac;"></span>
+                <span data-value="red" style="background:#f44a56;"></span>
+                <span data-value="green" style="background:#27ae60;"></span>
+                <span data-value="turquoise" style="background:#1fb5ad;"></span>
+            </div>
+        </div>
+
+        <!--STEPS FORM START ------------ -->
+        <div class="stepsForm sf-theme-green" style="width: 100%;">
+            <form method="post">
+                <div class="sf-steps">
+                    <div class="sf-steps-content">
+                        <div class="sf-active">
+                            <span>1</span> Profil
+                        </div>
+                        <div>
+                            <span>2</span> Foursquare
+                        </div>
+                        <div>
+                            <span>3</span> Hobiler
+                        </div>
+                    </div>
+                </div>
+                <div class="sf-steps-form sf-radius">
+
+                    <ul class="sf-content" style="display: block;">
+                        <!-- form step one -->
+                        <li style="margin-bottom: 2rem;">
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="text" name="name" placeholder="Ad" data-required="false">
+                            </div>
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="text" name="surname" placeholder="Soyad" data-required="false">
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 2rem;">
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="text" name="username" placeholder="Kullanıcı Adı" data-required="false">
+                            </div>
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="text" name="email" placeholder="Email" data-required="false">
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 2rem;">
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="password" placeholder="Şifre" data-required="false" data-confirm="false">
+                            </div>
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="password" placeholder="Şifre Tekrar" data-required="false" data-confirm="false">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="sf-content" style="display: none;">
+                        <!-- form step two -->
+                        <li style="margin-bottom: 2rem;">
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="text" placeholder="Email" data-required="false" data-email="false">
+                            </div>
+                            <div class="sf_columns column_3" style="width: 50%; margin-bottom: 0px;">
+                                <input type="password" placeholder="Şifre" data-required="false" data-confirm="false">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="sf-content" style="display: none;">
+                        <!-- form step tree -->
+                        <li style="margin-bottom: 2rem;">
+                            <div class="sf_columns column_6" style="width: 100%; margin-bottom: 0px;">
+                                <div class="sf-check">
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sf-steps-navigation sf-align-right">
+                    <span id="sf-msg" class="sf-msg-error"></span>
+                    <button id="sf-prev" type="button" class="sf-button" style="display: none;">Geri</button>
+                    <button id="sf-next" type="button" class="sf-button">İleri</button>
+                </div>
+            </form>
+        </div>
+        <!--STEPS FORM END -------------- -->
+        <script src="~/Scripts/jquery.rateit.js"></script>
+
+        <script>
+            $(document).ready(function (e) {
+
+                $(".stepsForm").stepsForm({
+                    width: '100%',
+                    active: 0,
+                    errormsg: 'Boş Alanları Kontrol Ediniz.',
+                    sendbtntext: 'Create Account',
+                    posturl: 'core/demo_steps_form.php',
+                    theme: 'green',
+                });
+
+                $(".container .themes>span").click(function (e) {
+                    $(".container .themes>span").removeClass("selectedx");
+                    $(this).addClass("selectedx");
+                    $(".stepsForm").removeClass().addClass("stepsForm");
+                    $(".stepsForm").addClass("sf-theme-" + $(this).attr("data-value"));
+                });
+            });
+        </script>
+
+    </div>
+
+
+    <footer>
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0" style="visibility: visible;-webkit-animation-delay: 0; -moz-animation-delay: 0; animation-delay: 0;">
+                        <div class="widget">
+                            <h3 class="block-title">Bizi Takip Edin</h3>
+                            <ul class="menu">
+                                <li>
+                                    <a title="fa fa-facebook" target="_blank" href="#"><i class="fa fa-facebook">&nbsp;Facebook</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-twitter" target="_blank" href="#"><i class="fa fa-twitter">&nbsp;Twitter</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-linkedin" target="_blank" href="#"><i class="fa fa-linkedin">&nbsp;Linkedin</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-google-plus" target="_blank" href="#"><i class="fa fa-google-plus">&nbsp;Google+</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-instagram" target="_blank" href="#"><i class="fa fa-instagram">&nbsp;Instagram</i></a>
+                                </li>
+                                <li>
+                                    <a title="fa fa-youtube" target="_blank" href="#"><i class="fa fa-youtube">&nbsp;Youtube</i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn animated" data-wow-delay="0.5" style="visibility: visible;-webkit-animation-delay:0.5; -moz-animation-delay: 0.5; animation-delay: 0.5;">
+                        <div class="widget">
+                            <h3 class="block-title">Faydalı Bağlantılar</h3>
+                            <ul class="menu">
+                                <li><a href="~/Home/Index">Anasayfa</a></li>
+                                <li><a href="~/Account/Login">Giriş</a></li>
+                                <li><a href="~/Home/SSS">SSS</a></li>
+                                <li><a href="~/Account/Signup">Kayıt Ol</a></li>
+                                <li><a href="~/Home/Iletisim">İletişim</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer area End -->
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info pull-left">
+                            <p>Aralık,2016</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+    </footer>
+</body>
+</html>

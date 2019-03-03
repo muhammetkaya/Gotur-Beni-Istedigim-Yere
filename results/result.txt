@@ -1,0 +1,106 @@
+Götür Beni İstediğim Yere projesi; yeni mekân keşfetmek isteyen, boş vakitlerinde nereye gideceğinin kararsızlığını yaşayan insanların kararsızlık sorunlarına cevap vermiştir.
+Sadece bir kerelik, kullanıcıyı tanıma evresinden sonra kullanıcıya anında mekân önerisi vermeye hazır hale gelmektedir. Bu aşamadan sonra uygulama ile hızlı ve kolay bir şekilde etkileşime geçerek mekân önerileri alabilir. 
+
+Örnek Profil Puanı ve Alınan Mekan Sonuçları
+Örnek Bir kullanıcı için Profil puanının hesaplanması ve bu hesaplamalar sonucunda alınacak mekân önerileri aşağıdaki gibidir.
+Kullanıcı hobilerini belirlediği ilgi puanına göre sisteme girer.
+Hobi						Sevgi Derecesi (1-5)
+Kitap Okumak						2
+Fotoğrafçılık						4
+Mangal Yakmak						1
+Kulaklık ile Müzik Dinlemek			3
+
+Sistem kullanıcın hobilerini mekân kategorilerine ayırır.
+Hobi							Kategori 1			Kategori 2				Kategori 3		Kategori 4
+Kitap Okumak					College Bookstore	Library					Rest Area		Book Cafe
+Fotoğrafçılık					Scenic Lookout		Photography Studio		Rest Area	
+Mangal Yakmak					BBQ Joint			Forest					Rest Area	
+Kulaklık ile Müzik Dinlemek		Rest Area			Scenic Lookout		
+
+Her kategoriye gelen ilgi derecesi hesaplanır.
+Kategori			Sevgi Derecesi İşlemleri		İlgi Derecesi
+College Bookstore			2							2
+Library						2							2
+Rest Area				2 + 4 + 1 + 3					10
+Scenic Lookout				4 + 3						7
+Photography Studio			4							4
+BBQ Joint					1							1
+Forest						1							1
+Book Cafe					2							2
+
+Kullanıcının Foursquare API’si üzerinden tüm checkinlerine ulaşılır.
+Mekan Adı
+Cafe Hookah
+Starbucks 
+Kordon
+Çolo Cafe & Bar
+Long Beach
+Kahve Diyarı
+Çeşmealtı
+
+Alınan checkinler (Mekanlar bulunmaktadır.)  kategorilerine ayrılır.
+Mekan Adı			Kategorileri
+Cafe Hookah			Cafe , Hookah Cafe
+Starbucks 			Coffee Shop, Cafe
+Kordon				Rest Area, Scenic Lookout
+Çolo Cafe & Bar		Cafe, Bar
+Long Beach			Beach, Beach Bar
+Kahve Diyarı		Coffee Shop, Cafe
+Çeşmealtı			Rest Area, Scenic Lookout
+
+Hobilerde olduğu gibi kategorilere olan ilgi derecesi hesaplanır.
+Kategori	İlgi Derecesi(Check-in Sayısı)
+Cafe					4
+Hookah Cafe				1
+Coffe Shop				2
+Rest Area				2
+Bar						1
+Beach					1
+Beach Bar				1
+
+
+Hobi analizindeki Kategori ilgisi ile Yer Bildirim Analizindeki Kategori ilgisi birleştirilir. Sonuç olarak aşağıdaki tablo elde edilir.
+Kategori		Sevgi Derecesi İşlemleri	İlgi Derecesi
+College Bookstore		2					2	
+Library					2					2
+Rest Area				2 + 4 + 1 + 3		10
+Scenic Lookout			4 + 3				7
+Photography Studio		4					4
+BBQ Joint				1					1
+Forest					1					1
+Book Cafe				2					2
+
+Özgün algoritma ve metriklerimiz hesaplanarak kullanıcının Kategori Profili oluşturulur.
+Kategori				Kategori Puanı
+Rest Area				0,8316548
+Scenic Lookout			0,7751623
+Photography Studio		0,7265418
+Book Cafe				0,5142655
+Library					0,4764815
+College Bookstore		0,4015621
+BBQ Joint				0,2166488
+Forest					0,1798156
+
+Kategori Profili oluşturulan kullanıcıya mekân önerileri aşağıdaki gibi yapılır.
+Mekân Önerileri							Mekân Kategorileri
+Bayraklı Seyir Tepe						Scenic Lookout Rest Area
+Gül Sokak								Rest Area
+Asansör									Scenic Lookout, Cafe, Restaurant, Historical Area
+Arma Kitap Cafe							Book Cafe, Library, Bookstore
+İzmir Milli Kütüphane					Library
+D&R Forum Bornova						College Bookstore
+İnciraltı Kent Ormanı ve Piknik Alanı	BBQ Joint, Forest
+Mislopet								BBQ Joint
+
+Kategori Profili oluşturulan kullanıcıya keşfet ile önerilen yerler 
+Mekân Önerileri							Mekân Kategorileri
+İzmir Fuarı								Rest Area, Concert, Fair, Art Gallery, Entertainment Center
+Kybele Bar								Jazz Bar, Bar, Jazz Music
+Adnan Saygun Sanat Merkezi				Art Gallery, Music Festival, Concert
+İzmir Konak Devlet Tiyatrosu			Theatre, Art, Act
+Levent Marina							Fish Resturant, Resturant, Port
+Bostanlı Sahil Tenis Kortları			Sport, Tennis
+Seda Bisiklet							Sport, Bicycle
+Yörük Aile Evi							Restaurant, Rest Area, Breakfast Restaurant
+
+Yapılan önerilerinden görüleceği üzere kendi kategorileri içerisinde kalite ve standartları oturmuş birçok kişi tarafından bilinen güvenilir ve popüler mekanlar bulunmaktadır. Kişinin karakteri özelleştikçe kişiye yapılacak önerilerde özelleşmektedir.

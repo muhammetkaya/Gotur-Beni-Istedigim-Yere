@@ -1,0 +1,46 @@
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.csprojResolveAssemblyReference.cache
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.dll.config
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.pdb
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\LinqToTwitter.AspNet.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\LinqToTwitter.net.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\Newtonsoft.Json.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\SharpSquare.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Core.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Interfaces.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Linq.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.PlatformServices.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\Newtonsoft.Json.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Core.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Interfaces.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Linq.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.PlatformServices.xml
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.dll
+c:\users\muhammet kaya\documents\visual studio 2015\Projects\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.pdb
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.dll.config
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\GoturBeniIstedigimYere.pdb
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\LinqToTwitter.AspNet.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\LinqToTwitter.net.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\Newtonsoft.Json.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\SharpSquare.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Core.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Linq.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\Newtonsoft.Json.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Core.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.Linq.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.dll
+C:\Users\asus\Desktop\goturbeni\GoturBeniIstedigimYere\GoturBeniIstedigimYere\obj\Debug\GoturBeniIstedigimYere.pdb

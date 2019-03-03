@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{082AF5E3-BBD4-408F-A7EC-BBC0CF730736}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GoturBeniIstedigimYere</RootNamespace>
+    <AssemblyName>GoturBeniIstedigimYere</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqToTwitter.AspNet, Version=3.2.0.30483, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\linqtotwitter.4.1.0\lib\net45\LinqToTwitter.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqToTwitter.net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=957107be965c25d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\linqtotwitter.4.1.0\lib\net45\LinqToTwitter.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpSquare, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpSquare.1.0.0.2\lib\net45\SharpSquare.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArffGenerator.cs" />
+    <Compile Include="AnalyzeEngine.cs" />
+    <Compile Include="Authorizer.cs" />
+    <Compile Include="CheckInResult.cs" />
+    <Compile Include="EntityFramework\Categorie.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CategoryProfile.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Checkin.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CheckinEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckinEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CheckinEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CheckinEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckinEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\LikeCategories.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Likes.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Place.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\PlaceCategories.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Post.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Token.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TRIPADVISORPLACES.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\User.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserLikes.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserLoginInfo.cs">
+      <DependentUpon>CheckinEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceAndImages.cs" />
+    <Compile Include="VenueCategories.cs" />
+    <Compile Include="Twitter.cs" />
+    <Compile Include="Swarm.cs" />
+    <Compile Include="PostType.cs" />
+    <Compile Include="PostAnalyzer.cs" />
+    <Compile Include="PlaceResult.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="CosineSimilarity.cs" />
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="DataAccessLayer\CheckinOperations.cs" />
+    <Compile Include="EntityFramework\DataViewModel\TRIPADVISORPLACESVIEWMODEL.cs" />
+    <Compile Include="EntityFramework\DataViewModel\PlaceViewModel.cs" />
+    <Compile Include="EntityFramework\DataViewModel\PlaceModelList.cs" />
+    <Compile Include="EntityFramework\DataViewModel\PlaceCategoriesViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecommendationEngine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EntityFramework\CheckinEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CheckinEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFramework\CheckinEF.edmx.diagram">
+      <DependentUpon>CheckinEF.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityFramework\CheckinEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CheckinEF.edmx</DependentUpon>
+      <LastGenOutput>CheckinEF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\CheckinEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CheckinEF.edmx</DependentUpon>
+      <LastGenOutput>CheckinEF.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
